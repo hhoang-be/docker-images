@@ -1,0 +1,8 @@
+version: '3.8'
+services: 
+    kafka-broker:
+        build: 
+            context: ./
+        stdin_open: true
+        tty: true
+        image: kafka-broker:${TAG:-latest}
