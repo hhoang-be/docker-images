@@ -1,0 +1,19 @@
+version: "3.8"
+services:
+    zoo-keeper:
+        image: zoo-keeper:${TAG:-latest}
+        working_dir: /opt
+        expose: 
+            - 2181
+        stdin_open: true
+        tty: true
+    kafka-broker:
+        image: kafka-broker:${TAG:-latest}
+        depends_on: 
+            - "zoo-keeper"
+        stdin_open: true
+        tty: true
+        working_dir: /opt
+        expose: 
+            - 9092
+
