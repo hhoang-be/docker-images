@@ -3,6 +3,9 @@ services:
     zoo-keeper:
         build: 
             context: ./
+        working_dir: /opt
         stdin_open: true
         tty: true
+        expose:  
+            - 2181
         image: zoo-keeper:${TAG:-latest}
