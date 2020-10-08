@@ -1,4 +1,6 @@
 #!/bin/bash
-mkir -p /tmp/kafka-logs
+mkdir -p /tmp/kafka-logs
 cd kafka_2.13-2.6.0
-sh bin/kafka-server-start.sh config/server.properties
+# if [ -f /opt/configs/server.properties ]; then
+    sh bin/kafka-server-start.sh /opt/configs/server.properties
+# fi

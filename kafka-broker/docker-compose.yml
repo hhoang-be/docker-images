@@ -6,6 +6,5 @@ services:
         working_dir: /opt
         stdin_open: true
         tty: true
-        ports: 
-            - 9092
         image: kafka-broker:${TAG:-latest}
+

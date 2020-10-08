@@ -3,8 +3,8 @@ services:
     zoo-keeper:
         image: zoo-keeper:${TAG:-latest}
         working_dir: /opt
-        expose: 
-            - 2181
+        ports: 
+            - "2181:2181"
         stdin_open: true
         tty: true
     kafka-broker:
@@ -14,6 +14,8 @@ services:
         stdin_open: true
         tty: true
         working_dir: /opt
-        expose: 
-            - 9092
+        ports: 
+            - "9092:9092"
+        volumes: 
+            - ./configs:/opt/configs
 
